@@ -4,16 +4,17 @@ import pandas as pd
 import json
 base="dark"
 
-
+uploaded_file_json = st.file_uploader("Choose a file")
+uploaded_file_excel = st.file_uploader("Choose a file")
 def load_data_json():
-    return pd.read_json('路外停車資訊.json')
-def load_data_excel():
-    return pd.read_excel('table.xlsx')
+    return pd.read_json(uploaded_file_json)
+def load_data_excel(uploaded_file_excel):
+    return pd.read_excel(uploaded_file_excel)
 info_column = ['areaId','areaName','parkName','totalSpace','surplusSpace','payGuide','introduction','address','wgsX','wgsY','parkId']
 #df.columns=['areaId','areaName','parkName','totalSpace','surplusSpace''payGuide','introduction','address','wgsX','wgsY','parkId','charge']
 areaId,areaName,parkName,totalSpace,surplusSpace,payGuide,introduction,address,wgsX,wgsY,parkId = [],[],[],[],[],[],[],[],[],[],[]
-df = load_data_json()
-charge_df =load_data_excel()
+df = load_data_json(uploaded_file_json)
+charge_df =load_data_excel(uploaded_file_excel)
 
 for info in df['parkingLots']:
     areaId.append(info['areaId'])
