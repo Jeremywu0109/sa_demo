@@ -7,7 +7,7 @@ def main():
     st.title("This is the app from Group 2")
     menu = ["Login","SignUp"]
     choice = st.sidebar.selectbox("Menu",menu)
-    url = 'http://localhost:8501'
+    url = 'https://share.streamlit.io/jeremywu0109/sa_demo/main/sa.py'
     if choice == "Login":
         st.sidebar.subheader("Login Phase")
         username = st.sidebar.text_input("User Name")
