@@ -6,9 +6,9 @@ base="dark"
 
 
 def load_data_json():
-    return pd.read_json('E:\路外停車資訊.json')
+    return pd.read_json('路外停車資訊.json')
 def load_data_excel():
-    return pd.read_excel('E:\table.xlsx')
+    return pd.read_excel('table.xlsx')
 info_column = ['areaId','areaName','parkName','totalSpace','surplusSpace','payGuide','introduction','address','wgsX','wgsY','parkId']
 #df.columns=['areaId','areaName','parkName','totalSpace','surplusSpace''payGuide','introduction','address','wgsX','wgsY','parkId','charge']
 areaId,areaName,parkName,totalSpace,surplusSpace,payGuide,introduction,address,wgsX,wgsY,parkId = [],[],[],[],[],[],[],[],[],[],[]
